@@ -1,0 +1,20 @@
+postgres: &postgres
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: cloudry
+  password: 54645464
+  encoding: unicode
+
+
+development:
+  <<: *postgres
+  database: printforme_development
+
+test:
+  <<: *postgres
+  database: printforme_test
+
+production:
+  <<: *postgres
+  database: printforme

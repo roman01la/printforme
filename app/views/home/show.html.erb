@@ -1,0 +1,39 @@
+<% @layout_body_class="home" %>
+
+<% content_for(:place_search) do %>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDmAbOWUxrH0Kd9cgsZ84d5VLT0vQ0onxU&sensor=false&libraries=places"></script>
+<% end %>
+
+<section class="main">
+  <div class="inner">
+
+    <form action="" class="search">
+      <input type="text" placeholder="Найдите ближайший 3D-принтер">
+      <input type="hidden" name="lat" class="lat">
+      <input type="hidden" name="lng" class="lng">
+      <label for="search"><small>город, область, почтовый индекс</small></label>
+    </form>
+
+  </div>
+</section>
+
+<section class="info">
+  <div class="inner">
+
+    <div class="column">
+      <h2>Найдите принтер</h2>
+      <p>Воспользуясь поиском, найдите ближайший принтер. Изучите его характеристики и стоимость печати вашей модели, свяжитесь с исполнителем.</p>
+    </div>
+
+    <div class="column">
+      <h2>Сделайте заказ</h2>
+      <p>Отправьте ваш проект исполнителю и оплатите услугу с помощью нашей системы.</p>
+    </div>
+
+    <div class="column">
+      <h2>Получите вашу модель</h2>
+      <p>Получите вашу модель по почте или при личной встрече с исполнителем.</p>
+    </div>
+
+  </div>
+</section>

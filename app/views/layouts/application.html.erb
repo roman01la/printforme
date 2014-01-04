@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1050">
+
+  <title>printforme | 3D-печать для всех</title>
+
+  <meta name="description" content="Мы хотим дать возможность каждому воспользоваться услугой 3D-печати. Помогайте другим воплощать их проекты в жизнь и зарабатывайте на этом.">
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic&subset=cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag "main", media: "all" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= @layout_body_class %>">
+
+  <div class="wrapper">
+
+    <header class="page-header">
+      <nav class="main-nav">
+        <ul>
+          <li class="logo"><a href="/"><%= image_tag "logo.png" %></a></li>
+          <% if user_signed_in? %>
+            <li>
+              <div class="btn-group">
+                <a href="/<%= current_user.username %>" class="btn">Профиль</a>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Заказы</a></li>
+                  <li><a href="#">Сообщения</a></li>
+                  <li><%= link_to "Выйти", destroy_user_session_path %></li>
+                </ul>
+              </div>
+            </li>
+          <% else %>
+            <li><%= link_to "Войти", new_user_session_path, :class => "btn" %></li>
+            <li><%= link_to "У меня есть 3D-принтер", new_registration_path('user'), :class => "btn" %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+  </div>
+
+  <footer class="page-footer">
+    <span class="copyright"><small>&copy; <a href="http://cloudry.io" target="_blank">cloudry.io</a></small></span>
+    <span><small><a href="#/about">О проекте</a></small></span>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/jquery.min.js"><\/script>')</script>
+  <%= yield(:place_search) %>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

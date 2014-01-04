@@ -1,0 +1,31 @@
+<% @layout_body_class="profile-edit" %>
+
+<% content_for(:place_search) do %>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDmAbOWUxrH0Kd9cgsZ84d5VLT0vQ0onxU&sensor=false&libraries=places"></script>
+<% end %>
+
+<section class="main">
+  <div class="inner">
+
+    <form action="" class="info-form">
+      <div class="item required">
+        <input type="text" class="field" name="first_name" placeholder="Имя" autocomplete="off" autofocus required>
+      </div>
+      <div class="item required">
+        <input type="text" class="field" name="last_name" placeholder="Фамилия" autocomplete="off" required>
+      </div>
+      <div class="item required">
+        <input type="text" placeholder="Город" class="field city" required>
+        <input type="hidden" name="lat" class="lat">
+        <input type="hidden" name="lng" class="lng">
+      </div>
+      <div class="item">
+        <button type="submit" class="btn" disabled>Сохранить</button>
+      </div>
+      <div class="item">
+        <span><small><a href="#/">Пропустить</a>. Эта информация будет использоваться для получения заказов. Без нее вы не сможете предоставлять услуги печати.</small></span>
+      </div>
+    </form>
+
+  </div>
+</section>

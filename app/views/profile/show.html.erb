@@ -1,0 +1,61 @@
+<% @layout_body_class="profile" %>
+
+<section class="main">
+  <div class="inner">
+
+    <aside class="sidebar">
+      <nav class="aside-nav">
+        <ul>
+          <li><a href="#/" class="user-pic"></a></li>
+        </ul>
+        <ul>
+          <li><a href="#/">Заказы</a></li>
+          <li><a href="#/">Сообщения</a></li>
+        </ul>
+        <ul>
+          <li><a href="#/">Пригласить друга</a></li>
+        </ul>
+        <ul>
+          <li><a href="#/" class="active">Профиль</a></li>
+          <li><a href="#/">Платежная информация</a></li>
+          <li><a href="#/">Просмотреть профиль</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="about">
+
+      <div class="info">
+        <form action="" class="valid">
+          <div class="item">
+            <input type="text" class="field" name="first_name" placeholder="Имя" autocomplete="off" value="<%= @user.firstname %>" required>
+            <input type="text" class="field" name="last_name" placeholder="Фамилия" autocomplete="off" value="<%= @user.lastname %>" required>
+          </div>
+          <div class="item">
+            <textarea class="field" name="bio" placeholder="О себе" cols="30" rows="8"></textarea>
+          </div>
+          <div class="item">
+            <button type="submit" class="btn">Сохранить</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="printers">
+        <form action="" class="valid">
+          <h2>Ваши принтеры</h2>
+          <table>
+            <thead></thead>
+            <tbody>
+              <tr class="empty">
+                <td>Добавьте принтер</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn">Добавить принтер</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>

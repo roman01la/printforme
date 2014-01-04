@@ -1,0 +1,75 @@
+<% @layout_body_class="add-printer" %>
+
+<section class="main">
+  <div class="inner">
+
+    <form action="" class="printer-form">
+      <div class="printer">
+        <div class="item required">
+          <input type="text" class="field model-field" name="model" placeholder="Модель 3D-принтера" autocomplete="off" required>
+        </div>
+        <div class="item required label">
+          <label for="dimensions">Макс. размер платформы (мм)</label>
+          <fieldset>
+            <input type="text" class="field number" placeholder="Ш" autocomplete="off" pattern="[0-9]+" required>
+            <span>X</span>
+            <input type="text" class="field number" placeholder="В" autocomplete="off" pattern="[0-9]+" required>
+            <span>X</span>
+            <input type="text" class="field number" placeholder="Г" autocomplete="off" pattern="[0-9]+" required>
+          </fieldset>
+          <input type="hidden" name="dimensions">
+        </div>
+        <div class="item required">
+          <input type="text" class="field res-field" name="resolution" placeholder="Макс. разрешение (мм)" autocomplete="off" pattern="[0-9]*[.]?[0-9]+" required>
+        </div>
+      </div>
+      <div class="table hidden">
+        <div class="item list">
+          <table>
+            <thead class="headings">
+              <tr>
+                <th></th>
+                <th>Материал</th>
+                <th class="align">Цена</th>
+                <th>Цвета</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="add-mat">
+        <div class="item required">
+          <select class="field chosen-select mat-field" name="materials" data-placeholder="Материал" required>
+            <option></option>
+          </select>
+        </div>
+        <div class="item required">
+          <select class="field chosen-select colors-field" name="colors" data-placeholder="Цвета" multiple required>
+            <option></option>
+          </select>
+        </div>
+        <div class="item required label">
+          <label for="price">$<span class="price-val">0.25</span> за 1 куб. см</label>
+          <input type="range" class="range-field" min="25" max="300" step="25" value="25">
+          <div class="slider-range-wrapper hidden">
+            <div class="slider-range-min"></div>
+          </div>
+          <input type="hidden" name="price" class="price-field">
+        </div>
+        <div class="item">
+          <button type="button" class="btn" disabled>Добавить материал</button>
+        </div>
+      </div>
+      <div class="item">
+        <button type="submit" class="btn" disabled>Сохранить</button>
+      </div>
+      <div class="item">
+        <span><small><a href="#/">Пропустить</a>. Эта информация будет использоваться для получения заказов. Без нее вы не сможете предоставлять услуги печати.</small></span>
+      </div>
+    </form>
+
+  </div>
+</section>

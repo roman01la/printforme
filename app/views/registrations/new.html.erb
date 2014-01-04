@@ -1,0 +1,58 @@
+<% @layout_body_class="signup" %>
+
+<section class="main">
+  <div class="inner">
+
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),
+             :html => {:class => 'signup-form'}) do |f| %>
+      <div class="item required hint" data-hint="Минимум 3 символа">
+        <%= f.text_field :username, :class => "field", :placeholder => "Логин", :autocomplete => "off",
+                         :required => true, :autofocus => true, :pattern => "^[a-zA-Z][a-zA-Z0-9-_\.]{2,20}$",
+                         :title => "Минимум 3 символа." %>
+      </div>
+      <div class="item required">
+        <%= f.email_field :email, :class => "field", :placeholder => "E-mail", :autocomplete => "off",
+                         :required => true %>
+      </div>
+      <div class="item required hint" data-hint="Минимум 6 символов">
+        <%= f.password_field :password, :class => "field", :placeholder => "Пароль",
+                             :required => true, :pattern => ".{6,}",
+                             :title => "Минимум 6 символов." %>
+      </div>
+      <div class="item required hint" data-hint="Пароли должны совпадать">
+        <%= f.password_field :password_confirmation, :class => "field", :placeholder => "Ещё раз пароль",
+                             :required => true, :pattern => ".{6,}",
+                             :title => "Минимум 6 символов." %>
+      </div>
+      <div class="item">
+        <input type="checkbox" class="accept hidden" name="user[accept]" required>
+        <label for="accept" class="check"><small>С <a href="#/">пользовательским соглашением</a> и <a href="#/">политикой конфиденциальности</a> согласен</small></label>
+        <button type="submit" class="btn" disabled>Зарегистрироваться</button>
+      </div>
+      <div class="item">
+        <span><small>Есть аккаунт? <%= link_to "Войти", new_user_session_path %></small></span>
+      </div>
+    <% end %>
+
+  </div>
+</section>
+
+<section class="info">
+  <div class="inner">
+
+    <h2>Как это работает?</h2>
+
+    <div class="column">
+      <p>У вас есть 3D-принтер, у других есть интересные проекты, помогите им. Создайте аккаунт и добавьте информацию о своем принтере.</p>
+    </div>
+
+    <div class="column">
+      <p>Вы будете получать модели для печати от пользователей живущих неподалеку.</p>
+    </div>
+
+    <div class="column">
+      <p>Зарабатывайте помагая. Если вы выполнили заказ, получите оплату в течении десяти дней.</p>
+    </div>
+
+  </div>
+</section>
